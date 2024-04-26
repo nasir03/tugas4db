@@ -1,0 +1,152 @@
+Setting environment for using XAMPP for Windows.
+ACER@LAPTOP-2K58MOR4 c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 40
+Server version: 10.4.25-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> USE belajar;
+Database changed
+MariaDB [belajar]> SELECT pesanan.id, pesanan.tanggal, pesanan. total, pelanggan.kode, pelanggan.nama,
+    -> kartu.nama as nama_kartu, kartu.diskon
+    -> FROM pesanan INNER JOIN pelanggan ON pesanan.pelanggan_id = pelanggan.id
+    -> INNER JOIN kartu ON pelanggan.kartu_id = kartu.id;
++----+------------+---------+------+--------------------+---------------+--------+
+| id | tanggal    | total   | kode | nama               | nama_kartu    | diskon |
++----+------------+---------+------+--------------------+---------------+--------+
+|  1 | 2015-11-04 | 9720000 | C001 | Agung Sedayu Group | Gold Utama    |   0.05 |
+|  2 | 2015-11-04 |   17500 | C003 | Sekar Mirah        | Gold Utama    |   0.05 |
+|  3 | 2015-11-04 |       0 | C006 | Gayatri Dwi        | Gold Utama    |   0.05 |
+|  4 | 2015-11-04 |       0 | C007 | Dewi Gyat          | Gold Utama    |   0.05 |
+|  5 | 2015-11-04 |       0 | C010 | Cassanndra         | Gold Utama    |   0.05 |
+|  6 | 2015-11-04 |       0 | C002 | Pandan Wangi       | Platinum Jaya |    0.1 |
+|  7 | 2015-11-04 |       0 | C005 | Pradabashu         | Platinum Jaya |    0.1 |
+|  8 | 2015-11-04 |       0 | C004 | Swandaru Geni      | Non Member    |      0 |
+|  9 | 2015-11-04 |       0 | C008 | Andre Haru         | Non Member    |      0 |
+| 10 | 2015-11-04 |       0 | C009 | Ahmad Hasan        | Non Member    |      0 |
+| 11 | 2015-11-04 |   30000 | C009 | Ahmad Hasan        | Non Member    |      0 |
++----+------------+---------+------+--------------------+---------------+--------+
+11 rows in set (0.001 sec)
+
+MariaDB [belajar]> SELECT pembelian.id, pembelian.tanggal, pembelian.nomor, pembelian.jumlah, pembelian.harga,
+    -> produk.nama, vendor.nama, vendor.kontak FROM pembelian INNER JOIN produk
+    -> ON pembelian.produk_id = produk.id
+    -> INNER JOIN vendor ON pembelian.vendor_id = vendor.id;
++----+------------+-------+--------+---------+-------------------+----------------------+-----------------+
+| id | tanggal    | nomor | jumlah | harga   | nama              | nama                 | kontak          |
++----+------------+-------+--------+---------+-------------------+----------------------+-----------------+
+|  1 | 2019-10-10 | P001  |      2 | 3500000 | Televisi 21 inchs | PT Guna Samudra      | Ali Nurdin      |
+|  2 | 2019-11-20 | P002  |      5 | 5500000 | Televisi 40 inch  | PT Pondok C9         | Putri Ramadhani |
+|  3 | 2019-12-12 | P003  |      5 | 5400000 | Televisi 40 inch  | PT Guna Samudra      | Ali Nurdin      |
+|  4 | 2020-01-20 | P004  |    200 |    1800 | Teh Botol         | CV Jaya Raya Semesta | Dwi Rahayu      |
+|  5 | 2020-01-20 | P005  |    100 |    2300 | Teh Kotak         | CV Jaya Raya Semesta | Dwi Rahayu      |
++----+------------+-------+--------+---------+-------------------+----------------------+-----------------+
+5 rows in set (0.001 sec)
+
+MariaDB [belajar]>
+MariaDB [belajar]> SELECT pembelian.id, pembelian.tanggal, pembelian.nomor, pembelian.jumlah, pembelian.harga,
+    -> produk.nama, vendor.nama, vendor.kontak FROM pembelian INNER JOIN produk
+    -> ON pembelian.produk_id = produk.id
+    -> INNER JOIN vendor ON pembelian.vendor_id = vendor.id;
++----+------------+-------+--------+---------+-------------------+----------------------+-----------------+
+| id | tanggal    | nomor | jumlah | harga   | nama              | nama                 | kontak          |
++----+------------+-------+--------+---------+-------------------+----------------------+-----------------+
+|  1 | 2019-10-10 | P001  |      2 | 3500000 | Televisi 21 inchs | PT Guna Samudra      | Ali Nurdin      |
+|  2 | 2019-11-20 | P002  |      5 | 5500000 | Televisi 40 inch  | PT Pondok C9         | Putri Ramadhani |
+|  3 | 2019-12-12 | P003  |      5 | 5400000 | Televisi 40 inch  | PT Guna Samudra      | Ali Nurdin      |
+|  4 | 2020-01-20 | P004  |    200 |    1800 | Teh Botol         | CV Jaya Raya Semesta | Dwi Rahayu      |
+|  5 | 2020-01-20 | P005  |    100 |    2300 | Teh Kotak         | CV Jaya Raya Semesta | Dwi Rahayu      |
++----+------------+-------+--------+---------+-------------------+----------------------+-----------------+
+5 rows in set (0.001 sec)
+
+MariaDB [belajar]>
+MariaDB [belajar]> SELECT pesanan.id, pesanan.tanggal, pesanan. total, pelanggan.kode, pelanggan.nama,
+    -> kartu.nama as nama_kartu, kartu.diskon
+    -> FROM pesanan INNER JOIN pelanggan ON pesanan.pelanggan_id = pelanggan.id
+    -> INNER JOIN kartu ON pelanggan.kartu_id = kartu.id;
++----+------------+---------+------+--------------------+---------------+--------+
+| id | tanggal    | total   | kode | nama               | nama_kartu    | diskon |
++----+------------+---------+------+--------------------+---------------+--------+
+|  1 | 2015-11-04 | 9720000 | C001 | Agung Sedayu Group | Gold Utama    |   0.05 |
+|  2 | 2015-11-04 |   17500 | C003 | Sekar Mirah        | Gold Utama    |   0.05 |
+|  3 | 2015-11-04 |       0 | C006 | Gayatri Dwi        | Gold Utama    |   0.05 |
+|  4 | 2015-11-04 |       0 | C007 | Dewi Gyat          | Gold Utama    |   0.05 |
+|  5 | 2015-11-04 |       0 | C010 | Cassanndra         | Gold Utama    |   0.05 |
+|  6 | 2015-11-04 |       0 | C002 | Pandan Wangi       | Platinum Jaya |    0.1 |
+|  7 | 2015-11-04 |       0 | C005 | Pradabashu         | Platinum Jaya |    0.1 |
+|  8 | 2015-11-04 |       0 | C004 | Swandaru Geni      | Non Member    |      0 |
+|  9 | 2015-11-04 |       0 | C008 | Andre Haru         | Non Member    |      0 |
+| 10 | 2015-11-04 |       0 | C009 | Ahmad Hasan        | Non Member    |      0 |
+| 11 | 2015-11-04 |   30000 | C009 | Ahmad Hasan        | Non Member    |      0 |
++----+------------+---------+------+--------------------+---------------+--------+
+11 rows in set (0.001 sec)
+
+MariaDB [belajar]> SELECT p.id, p.tanggal, p.nomor, p.jumlah, p.harga,
+    -> pr.nama, v.nama as nama_vendor, v.kontak FROM pembelian p INNER JOIN produk pr
+    -> ON p.produk_id = pr.id
+    -> INNER JOIN vendor v ON p.vendor_id = v.id;
++----+------------+-------+--------+---------+-------------------+----------------------+-----------------+
+| id | tanggal    | nomor | jumlah | harga   | nama              | nama_vendor          | kontak          |
++----+------------+-------+--------+---------+-------------------+----------------------+-----------------+
+|  1 | 2019-10-10 | P001  |      2 | 3500000 | Televisi 21 inchs | PT Guna Samudra      | Ali Nurdin      |
+|  2 | 2019-11-20 | P002  |      5 | 5500000 | Televisi 40 inch  | PT Pondok C9         | Putri Ramadhani |
+|  3 | 2019-12-12 | P003  |      5 | 5400000 | Televisi 40 inch  | PT Guna Samudra      | Ali Nurdin      |
+|  4 | 2020-01-20 | P004  |    200 |    1800 | Teh Botol         | CV Jaya Raya Semesta | Dwi Rahayu      |
+|  5 | 2020-01-20 | P005  |    100 |    2300 | Teh Kotak         | CV Jaya Raya Semesta | Dwi Rahayu      |
++----+------------+-------+--------+---------+-------------------+----------------------+-----------------+
+5 rows in set (0.002 sec)
+
+MariaDB [belajar]> SELECT * FROM pembelian_produk_vendor;
++----+------------+-------+--------+---------+-------------------+----------------------+-----------------+
+| id | tanggal    | nomor | jumlah | harga   | nama              | nama_vendor          | kontak          |
++----+------------+-------+--------+---------+-------------------+----------------------+-----------------+
+|  1 | 2019-10-10 | P001  |      2 | 3500000 | Televisi 21 inchs | PT Guna Samudra      | Ali Nurdin      |
+|  2 | 2019-11-20 | P002  |      5 | 5500000 | Televisi 40 inch  | PT Pondok C9         | Putri Ramadhani |
+|  3 | 2019-12-12 | P003  |      5 | 5400000 | Televisi 40 inch  | PT Guna Samudra      | Ali Nurdin      |
+|  4 | 2020-01-20 | P004  |    200 |    1800 | Teh Botol         | CV Jaya Raya Semesta | Dwi Rahayu      |
+|  5 | 2020-01-20 | P005  |    100 |    2300 | Teh Kotak         | CV Jaya Raya Semesta | Dwi Rahayu      |
++----+------------+-------+--------+---------+-------------------+----------------------+-----------------+
+5 rows in set (0.001 sec)
+
+MariaDB [belajar]>
+-- 1. Mulai transaction
+START TRANSACTION;
+
+-- 2. Insert data produk sebanyak 3 record
+INSERT INTO produk (nama_produk, harga, stok) VALUES ('Produk A', 10000, 50);
+INSERT INTO produk (nama_produk, harga, stok) VALUES ('Produk B', 15000, 30);
+INSERT INTO produk (nama_produk, harga, stok) VALUES ('Produk C', 20000, 20);
+
+-- 3. Update data stok salah satu produk
+UPDATE produk SET stok = 40 WHERE nama_produk = 'Produk A';
+
+-- 4. Buat savepoint
+SAVEPOINT before_delete;
+
+-- 5. Hapus salah satu data pembayaran
+DELETE FROM pembayaran WHERE id = 123;
+
+-- 6. Kembali ke savepoint
+ROLLBACK TO SAVEPOINT before_delete;
+
+-- 7. Update data iuran salah satu kartu
+UPDATE kartu SET iuran = 50000 WHERE nomor_kartu = '1234567890123456';
+
+-- 8. Akhiri transaction dengan commit
+COMMIT;
+```
+
+Penjelasan mengenai penggunaan `LOCK TABLES READ` dan `LOCK TABLES WRITE`:
+
+1. **LOCK TABLES READ**:
+   - **Saat yang tepat:** Ketika Anda ingin mencegah tabel dari perubahan struktur, tetapi masih ingin memungkinkan pembacaan data dari tabel tersebut.
+   - **Contoh situasi:** Misalkan Anda memiliki tabel yang sedang digunakan secara intensif untuk pembacaan, tetapi ingin mencegah perubahan struktur tabel, seperti penambahan kolom, penghapusan, atau modifikasi skema.
+
+2. **LOCK TABLES WRITE**:
+   - **Saat yang tepat:** Ketika Anda ingin mencegah tabel dari pembacaan dan penulisan sambil menjalankan operasi tertentu yang membutuhkan eksklusivitas pada tabel tersebut.
+   - **Contoh situasi:** Misalkan Anda perlu menjalankan operasi penghapusan massal pada sebuah tabel dan ingin memastikan bahwa tidak ada pembacaan atau penulisan lain yang terjadi pada saat operasi ini berlangsung. Dalam situasi seperti ini, Anda dapat menggunakan `LOCK TABLES WRITE` untuk mendapatkan kontrol eksklusif atas tabel tersebut.
